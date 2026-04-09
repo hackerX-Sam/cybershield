@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberShield Pro - Setup</title>
+    <style>
+        :root {
+            --background: #0a0a1a;
+            --foreground: #f0f0f5;
+            --primary: #00f2ff;
+            --accent: #00ff9d;
+        }
+        body {
+            background-color: var(--background);
+            color: var(--foreground);
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 0 50px rgba(0, 242, 255, 0.1);
+        }
+        h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #a0a0b8;
+        }
+        .instructions {
+            margin-top: 2rem;
+            text-align: left;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+        code {
+            display: block;
+            background: #000;
+            padding: 0.75rem;
+            border-radius: 6px;
+            color: var(--accent);
+            font-family: 'Consolas', monospace;
+            margin: 0.5rem 0;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.75rem 2rem;
+            background: var(--primary);
+            color: var(--background);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 242, 255, 0.4);
+        }
+        .status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--accent);
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CyberShield Pro</h1>
+        <p>Your advanced security dashboard is ready to go. To view the interactive preview, you must run it using the Next.js development server.</p>
+        
+        <div class="instructions">
+            <strong>How to view:</strong>
+            <p>1. Open your terminal in this folder.</p>
+            <p>2. Run the installation and dev commands:</p>
+            <code>npm install --legacy-peer-deps</code>
+            <code>npm run dev</code>
+            <p>3. Open your browser and go to:</p>
+            <code>http://localhost:3000</code>
+        </div>
+
+        <a href="http://localhost:3000" class="btn" id="preview-btn">Open Local Preview</a>
+
+        <div class="status">
+            <div class="dot"></div>
+            <span>Dev Server recommended over Live Server</span>
+        </div>
+    </div>
+
+    <script>
+        // Check if localhost:3000 is likely up and redirect if clicked
+        document.getElementById('preview-btn').onclick = function(e) {
+            console.log('Attempting to open preview...');
+        };
+    </script>
+</body>
+</html>
