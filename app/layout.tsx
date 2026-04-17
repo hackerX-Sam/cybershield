@@ -1,18 +1,16 @@
 import type { Metadata, Viewport } from 'next'
-import { Outfit, Fira_Code } from 'next/font/google'
+import { Inter, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const outfit = Outfit({ 
+const inter = Inter({ 
   subsets: ["latin"],
   variable: '--font-sans',
-  weight: ['300', '400', '500', '600']
 });
 
-const firaCode = Fira_Code({ 
+const jetbrainsMono = JetBrains_Mono({ 
   subsets: ["latin"],
   variable: '--font-mono',
-  weight: ['300', '400', '500']
 });
 
 export const metadata: Metadata = {
@@ -50,7 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${outfit.variable} ${firaCode.variable} font-sans antialiased font-light`}>
+      <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
